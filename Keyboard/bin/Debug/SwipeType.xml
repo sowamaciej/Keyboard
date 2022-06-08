@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SwipeType</name>
+    </assembly>
+    <members>
+        <member name="T:SwipeType.DistanceSwipeType">
+            <summary>
+            SwipeType using Damerau–Levenshtein distance.
+            </summary>
+        </member>
+        <member name="M:SwipeType.DistanceSwipeType.#ctor(System.String[])">
+            <summary>
+            </summary>
+            <param name="wordList">The dictionary of words.</param>
+        </member>
+        <member name="M:SwipeType.DistanceSwipeType.GetSuggestionImpl(System.String)">
+            <summary>
+            Returns suggestions for an input string.
+            </summary>
+            <param name="input">Input string</param>
+        </member>
+        <member name="T:SwipeType.MatchSwipeType">
+            <summary>
+            MatchSwipeType.
+            </summary>
+        </member>
+        <member name="F:SwipeType.MatchSwipeType.KeyboardLayoutEnglish">
+            <summary>
+            Keyboard layout.
+            </summary>
+        </member>
+        <member name="M:SwipeType.MatchSwipeType.#ctor(System.String[])">
+            <summary>
+            </summary>
+            <param name="wordList">The dictionary of words.</param>
+        </member>
+        <member name="M:SwipeType.MatchSwipeType.GetSuggestionImpl(System.String)">
+            <summary>
+            Returns suggestions for an input string.
+            </summary>
+            <param name="input">Input string</param>
+        </member>
+        <member name="M:SwipeType.MatchSwipeType.Match(System.String,System.String)">
+            <summary>
+            Checks if a letter is present in a path or not.
+            </summary>
+        </member>
+        <member name="M:SwipeType.MatchSwipeType.GetKeyboardRow(System.Char)">
+            <summary>
+            Returns the row number of the character.
+            </summary>
+        </member>
+        <member name="M:SwipeType.MatchSwipeType.Compress(System.Text.StringBuilder)">
+            <summary>
+            Removes redundant sequential characters.
+            </summary>
+        </member>
+        <member name="M:SwipeType.MatchSwipeType.GetMinimumWordlength(System.String)">
+            <summary>
+            Returns the minimum possible word length from the path.
+            Uses the number of transitions from different rows in
+            the keyboard layout to determin the minimum length.
+            </summary>
+        </member>
+        <member name="T:SwipeType.SwipeType">
+            <summary>
+            Abstract SwipeType.
+            </summary>
+        </member>
+        <member name="M:SwipeType.SwipeType.#ctor(System.String[])">
+            <summary>
+            </summary>
+            <param name="wordList">The dictionary of words.</param>
+        </member>
+        <member name="P:SwipeType.SwipeType.Words">
+            <summary>
+            Dictionary of words.
+            </summary>
+        </member>
+        <member name="M:SwipeType.SwipeType.GetSuggestion(System.String)">
+            <summary>
+            Returns suggestions for an input string.
+            </summary>
+            <param name="input">Input string</param>
+        </member>
+        <member name="M:SwipeType.SwipeType.GetSuggestion(System.String,System.Int32)">
+            <summary>
+            Returns suggestions for an input string.
+            </summary>
+            <param name="input">Input string</param>
+            <param name="count">The number of elements to return.</param>
+        </member>
+        <member name="M:SwipeType.SwipeType.GetSuggestionImpl(System.String)">
+            <summary>
+            Returns suggestions for an input string.
+            </summary>
+            <param name="input">Input string</param>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,17 @@
+C:\Users\maciej.sowa\source\repos\Keyboard\Keyboard\obj\Debug\Keyboard.csproj.AssemblyReference.cache
+C:\Users\maciej.sowa\source\repos\Keyboard\Keyboard\obj\Debug\Keyboard.csproj.SuggestedBindingRedirects.cache
+C:\Users\maciej.sowa\source\repos\Keyboard\Keyboard\obj\Debug\Keyboard.Form1.resources
+C:\Users\maciej.sowa\source\repos\Keyboard\Keyboard\obj\Debug\Keyboard.Properties.Resources.resources
+C:\Users\maciej.sowa\source\repos\Keyboard\Keyboard\obj\Debug\Keyboard.csproj.GenerateResource.cache
+C:\Users\maciej.sowa\source\repos\Keyboard\Keyboard\obj\Debug\Keyboard.csproj.CoreCompileInputs.cache
+C:\Users\maciej.sowa\source\repos\Keyboard\Keyboard\bin\Debug\Keyboard.exe.config
+C:\Users\maciej.sowa\source\repos\Keyboard\Keyboard\bin\Debug\Keyboard.exe
+C:\Users\maciej.sowa\source\repos\Keyboard\Keyboard\bin\Debug\Keyboard.pdb
+C:\Users\maciej.sowa\source\repos\Keyboard\Keyboard\obj\Debug\Keyboard.exe
+C:\Users\maciej.sowa\source\repos\Keyboard\Keyboard\obj\Debug\Keyboard.pdb
+C:\Users\maciej.sowa\source\repos\Keyboard\Keyboard\obj\Debug\Interop.IWshRuntimeLibrary.dll
+C:\Users\maciej.sowa\source\repos\Keyboard\Keyboard\obj\Debug\Keyboard.csproj.ResolveComReference.cache
+C:\Users\maciej.sowa\source\repos\Keyboard\Keyboard\bin\Debug\SwipeType.dll
+C:\Users\maciej.sowa\source\repos\Keyboard\Keyboard\bin\Debug\SwipeType.pdb
+C:\Users\maciej.sowa\source\repos\Keyboard\Keyboard\bin\Debug\SwipeType.xml
+C:\Users\maciej.sowa\source\repos\Keyboard\Keyboard\obj\Debug\Keyboard.csproj.CopyComplete
