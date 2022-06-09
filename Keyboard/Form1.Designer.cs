@@ -364,7 +364,7 @@
             this.button27.TabIndex = 27;
             this.button27.Text = "Enter";
             this.button27.UseVisualStyleBackColor = true;
-            this.button27.Click += new System.EventHandler(this.enterClick);
+            this.button27.Click += new System.EventHandler(this.EnterClick);
             // 
             // button28
             // 
@@ -374,7 +374,7 @@
             this.button28.TabIndex = 28;
             this.button28.Text = "Backspace";
             this.button28.UseVisualStyleBackColor = true;
-            this.button28.Click += new System.EventHandler(this.backspaceClick);
+            this.button28.Click += new System.EventHandler(this.BackspaceClick);
             // 
             // button29
             // 
@@ -393,7 +393,7 @@
             this.button30.TabIndex = 30;
             this.button30.Text = "Send";
             this.button30.UseVisualStyleBackColor = true;
-            this.button30.Click += new System.EventHandler(this.buttonSendClick);
+            this.button30.Click += new System.EventHandler(this.ButtonSendClick);
             // 
             // textBox1
             // 
