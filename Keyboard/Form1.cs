@@ -16,6 +16,10 @@ namespace Keyboard
         private readonly String BACKSPACE_MARKER = "{BACKSPACE}";
         private readonly String ENTER_MARKER = "{ENTER}";
         private readonly String SPACE_MARKER = " ";
+
+        private readonly String ENGLISH_DICT = "EnglishDictionary.txt";
+        private readonly String POLISH_DICT = "PolishDictionary.txt";
+
         private readonly WshShell shell;
         readonly SwipeType.SwipeType swipeType;
         readonly SwipeType.SwipeType distanceSwipeType;
@@ -30,8 +34,8 @@ namespace Keyboard
         {
             shell = new WshShell();
             acc = "";
-            swipeType = new SwipeType.MatchSwipeType(System.IO.File.ReadAllLines("EnglishDictionary.txt"));
-            distanceSwipeType = new SwipeType.DistanceSwipeType(System.IO.File.ReadAllLines("EnglishDictionary.txt"));
+            swipeType = new SwipeType.MatchSwipeType(System.IO.File.ReadAllLines(POLISH_DICT));
+            distanceSwipeType = new SwipeType.DistanceSwipeType(System.IO.File.ReadAllLines(POLISH_DICT));
             InitializeComponent();
         }
 
@@ -187,6 +191,7 @@ namespace Keyboard
 /* TODO
  * Nazwy własne - może przycisk, który przełącza tryby swipe/normal typing
  * Poprawić działanie sugestii dla języka polskiego
+ * brak znalezionego slowa - co wtedy? znalezc dopasowanie slow pierwsza litera + ostatnia litera wprowadzona 
  * Wprowadzanie zduplikowanych znaków
  * Wprowadzenie pojedynczych znaków 
  * Polskie znaki 
