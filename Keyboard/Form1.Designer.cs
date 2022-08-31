@@ -57,10 +57,12 @@
             this.button26 = new System.Windows.Forms.Button();
             this.button27 = new System.Windows.Forms.Button();
             this.button28 = new System.Windows.Forms.Button();
-            this.button29 = new System.Windows.Forms.Button();
-            this.button30 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.modeChange = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonQ
@@ -356,6 +358,7 @@
             this.button26.Size = new System.Drawing.Size(274, 50);
             this.button26.TabIndex = 26;
             this.button26.UseVisualStyleBackColor = true;
+            this.button26.Click += new System.EventHandler(this.SpaceClick);
             // 
             // button27
             // 
@@ -377,25 +380,6 @@
             this.button28.UseVisualStyleBackColor = true;
             this.button28.Click += new System.EventHandler(this.BackspaceClick);
             // 
-            // button29
-            // 
-            this.button29.Location = new System.Drawing.Point(1, 214);
-            this.button29.Name = "button29";
-            this.button29.Size = new System.Drawing.Size(105, 50);
-            this.button29.TabIndex = 29;
-            this.button29.Text = "Shift";
-            this.button29.UseVisualStyleBackColor = true;
-            // 
-            // button30
-            // 
-            this.button30.Location = new System.Drawing.Point(611, 237);
-            this.button30.Name = "button30";
-            this.button30.Size = new System.Drawing.Size(94, 50);
-            this.button30.TabIndex = 30;
-            this.button30.Text = "Send";
-            this.button30.UseVisualStyleBackColor = true;
-            this.button30.Click += new System.EventHandler(this.ButtonSendClick);
-            // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(12, 22);
@@ -413,15 +397,57 @@
             this.modeChange.UseVisualStyleBackColor = true;
             this.modeChange.Click += new System.EventHandler(this.ChangeMode);
             // 
+            // checkBox1
+            // 
+            this.checkBox1.Appearance = System.Windows.Forms.Appearance.Button;
+            this.checkBox1.Location = new System.Drawing.Point(12, 214);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(94, 50);
+            this.checkBox1.TabIndex = 33;
+            this.checkBox1.Text = "Shift";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.Appearance = System.Windows.Forms.Appearance.Button;
+            this.checkBox2.Location = new System.Drawing.Point(12, 158);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(83, 50);
+            this.checkBox2.TabIndex = 34;
+            this.checkBox2.Text = "CapsLock";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(504, 214);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(50, 50);
+            this.button1.TabIndex = 35;
+            this.button1.Text = ",";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(560, 214);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(50, 50);
+            this.button2.TabIndex = 36;
+            this.button2.Text = ".";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1101, 326);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.checkBox2);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.modeChange);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button30);
-            this.Controls.Add(this.button29);
             this.Controls.Add(this.button28);
             this.Controls.Add(this.button27);
             this.Controls.Add(this.button26);
@@ -489,10 +515,12 @@
         private System.Windows.Forms.Button button26;
         private System.Windows.Forms.Button button27;
         private System.Windows.Forms.Button button28;
-        private System.Windows.Forms.Button button29;
-        private System.Windows.Forms.Button button30;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button modeChange;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
 

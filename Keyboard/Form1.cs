@@ -57,10 +57,16 @@ namespace Keyboard
         {
             Button btn = (Button)sender;
 
-
             if (swypeMode == false)
             {
-                shell.SendKeys(btn.Text);
+                if (checkBox1.Checked == true || checkBox2.Checked == true)
+                {
+                    SendKeys.Send(btn.Text.ToUpper());
+                    checkBox1.Checked = false;
+                } else
+                {
+                    SendKeys.Send(btn.Text.ToLower());
+                }
                 return;
             }
 
@@ -77,6 +83,16 @@ namespace Keyboard
 
                 if (firstSuggestion != null)
                 {
+
+                    if (checkBox2.Checked == true)
+                    {
+                        word = word.ToUpper();
+                    } else if (checkBox1.Checked == true)
+                    {
+                        word = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(word.ToLower());
+                        checkBox1.Checked = false;
+                    }
+
                     shell.SendKeys(word + SPACE_MARKER);
                     textBox1.Text = word;
                 }
@@ -111,8 +127,20 @@ namespace Keyboard
 
             for (int i = 1; i < length; ++i)
             {
+
+                string text = suggestions.ElementAt(i);
+
+                if (checkBox2.Checked == true)
+                {
+                    text = text.ToUpper();
+                } else if (checkBox1.Checked == true)
+                {
+                    text = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(text.ToLower());
+                    checkBox1.Checked = false;
+                }
+
                 Button btn = new Button();
-                btn.Text = suggestions.ElementAt(i);
+                btn.Text = text;
                 btn.Name = "suggestion";
                 btn.Size = new Size(50, 50);
                 btn.Location = new Point(50*i, 50);
@@ -158,33 +186,6 @@ namespace Keyboard
             }
         }
 
-        private void ButtonSendClick(object sender, EventArgs e)
-        {
-            SendString();
-        }
-
-        private void SendString()
-        {
-            shell.SendKeys(acc);
-            System.Collections.Generic.IEnumerable<string> result = swipeType.GetSuggestion(acc, 10);
-
-            int length = result.Count();
-            for (int i = 0; i < length; ++i)
-            {
-                Debug.WriteLine($"M match {i + 1}: {result.ElementAt(i)}");
-            }
-
-            System.Collections.Generic.IEnumerable<string> result2 = distanceSwipeType.GetSuggestion(acc, 5);
-
-            int length2 = result2.Count();
-            for (int i = 0; i < length2; ++i)
-            {
-                Debug.WriteLine($"D match {i + 1}: {result2.ElementAt(i)}");
-            }
-
-            acc = "";
-            lastLetter = null;
-        }
 
         private void BackspaceClick(object sender, EventArgs e)
         {
@@ -211,16 +212,30 @@ namespace Keyboard
                 btn.Text = "normal";
             }
         }
+
+        private void SpaceClick(object sender, EventArgs e)
+        {
+            SendKeys.Send(SPACE_MARKER);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SendKeys.Send(",");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            SendKeys.Send(".");
+        }
     }
 }
 
 /* TODO
  * Nazwy własne - może przycisk, który przełącza tryby swipe/normal typing - done
- * Poprawić działanie sugestii dla języka polskiego
- * brak znalezionego slowa - co wtedy? znalezc dopasowanie slow pierwsza litera + ostatnia litera wprowadzona 
- * Wprowadzanie zduplikowanych znaków
- * Polskie znaki 
- * znaki specjalne
+ * Poprawić działanie sugestii dla języka polskiego - done 
+ * brak znalezionego slowa - co wtedy? znalezc dopasowanie slow pierwsza litera + ostatnia litera wprowadzona - done
+ * znaki specjalne - kropka, przecinek done
  * poprawić blad kiedy klikniecie nastepuje poza klawiszami - done
- * Upiększyć widok klawiatury
+ * Upiększyć widok klawiatury 
+ * Polskie znaki 
  * */
