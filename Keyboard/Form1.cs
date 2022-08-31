@@ -30,10 +30,13 @@ namespace Keyboard
 
         bool inputInProgress;
 
+        bool swypeMode;
+
         public Form1()
         {
             shell = new WshShell();
             acc = "";
+            swypeMode = true;
             swipeType = new SwipeType.MatchSwipeType(System.IO.File.ReadAllLines(POLISH_DICT));
             distanceSwipeType = new SwipeType.DistanceSwipeType(System.IO.File.ReadAllLines(POLISH_DICT));
             InitializeComponent();
@@ -54,11 +57,20 @@ namespace Keyboard
         {
             Button btn = (Button)sender;
 
+
+            if (swypeMode == false)
+            {
+                shell.SendKeys(btn.Text);
+                return;
+            }
+
+
+
             if (inputInProgress)
             {
                 inputInProgress = false;
 
-                System.Collections.Generic.IEnumerable<string> suggestions = GetSuggestions(swipeType, 10);
+                System.Collections.Generic.IEnumerable<string> suggestions = GetSuggestions(swipeType, 8);
                 int length = suggestions.Count();
                 string firstSuggestion = length > 0 ? suggestions.ElementAt(0) : null;
                 word = firstSuggestion;
@@ -185,18 +197,30 @@ namespace Keyboard
             SendKeys.Send(ENTER_MARKER);
         }
 
+        private void ChangeMode(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            if (swypeMode)
+            {
+                swypeMode = false;
+                btn.Text = "swype";
+            }
+            else
+            {
+                swypeMode = true;
+                btn.Text = "normal";
+            }
+        }
     }
 }
 
 /* TODO
- * Nazwy własne - może przycisk, który przełącza tryby swipe/normal typing
+ * Nazwy własne - może przycisk, który przełącza tryby swipe/normal typing - done
  * Poprawić działanie sugestii dla języka polskiego
  * brak znalezionego slowa - co wtedy? znalezc dopasowanie slow pierwsza litera + ostatnia litera wprowadzona 
  * Wprowadzanie zduplikowanych znaków
- * Wprowadzenie pojedynczych znaków 
  * Polskie znaki 
- * Backspace dla całych wyrazów - ? 
  * znaki specjalne
- * poprawić blad kiedy klikniecie nastepuje poza klawiszami
+ * poprawić blad kiedy klikniecie nastepuje poza klawiszami - done
  * Upiększyć widok klawiatury
  * */
